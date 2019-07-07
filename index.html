@@ -1,0 +1,143 @@
+<html>
+    <head>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script src="./flexbox-helper.js"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="./flexbox.css">
+    </head>
+    <body>
+            <div class="container" >
+                    <div class="row">
+                            <div class="col-md">
+                                <iframe id="builder" src="./builder.html">
+                                </iframe>
+                            </div>    
+                    </div>
+                    <div class="row" bis_skin_checked="1">
+                    <div class="col-md" bis_skin_checked="1">
+                        <div class="control-heading" bis_skin_checked="1">flex-direction</div>
+                        <div class="control-group" bis_skin_checked="1">
+                            <label>
+                                <input type="radio" name="flex-direction" value="row" checked="">
+                                row (default)
+                            </label>
+                            <label>
+                                <input type="radio" name="flex-direction" value="row-reverse">
+                                row-reverse
+                            </label>
+                            <label>
+                                <input type="radio" name="flex-direction" value="column">
+                                column
+                            </label>
+                            <label>
+                                <input type="radio" name="flex-direction" value="column-reverse">
+                                column-reverse
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-md" bis_skin_checked="1">
+                        <div class="control-heading" bis_skin_checked="1">flex-wrap</div>
+                        <div class="control-explanation" bis_skin_checked="1">whether items wrap to the next <span class="if-row">row</span><span class="if-column">column</span> (only applies if combined <span class="if-row">width</span><span class="if-column">height</span> of items is greater than container's)</div>
+                        <div class="control-group" bis_skin_checked="1">
+                            <label>
+                                <input type="radio" name="flex-wrap" value="nowrap" checked="">
+                                nowrap (default)
+                            </label>
+                            <label>
+                                <input type="radio" name="flex-wrap" value="wrap">
+                                wrap
+                            </label>
+                            <label>
+                                <input type="radio" name="flex-wrap" value="wrap-reverse">
+                                wrap-reverse
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-md" bis_skin_checked="1">
+                        <div class="control-heading" bis_skin_checked="1">justify-content</div>
+                        <div class="control-explanation" bis_skin_checked="1">alignment along the <span class="if-row">x</span><span class="if-column">y</span> axis</div>
+                        <div class="control-group" bis_skin_checked="1">
+                            <label>
+                                <input type="radio" name="justify-content" value="flex-start" checked="">
+                                flex-start (default)
+                            </label>
+                            <label>
+                                <input type="radio" name="justify-content" value="flex-end">
+                                flex-end
+                            </label>
+                            <label>
+                                <input type="radio" name="justify-content" value="center">
+                                center
+                            </label>
+                            <label>
+                                <input type="radio" name="justify-content" value="space-around">
+                                space-around
+                            </label>
+                            <label>
+                                <input type="radio" name="justify-content" value="space-between">
+                                space-between
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-md" bis_skin_checked="1">
+                        <div class="control-heading" bis_skin_checked="1">align-items</div>
+                        <div class="control-explanation" bis_skin_checked="1">alignment along the <span class="if-row">y</span><span class="if-column">x</span> axis</div>
+                        <div class="control-group" bis_skin_checked="1">
+                            <label>
+                                <input type="radio" name="align-items" value="stretch" checked="">
+                                stretch (default)
+                            </label>
+                            <label>
+                                <input type="radio" name="align-items" value="baseline">
+                                baseline
+                            </label>
+                            <label>
+                                <input type="radio" name="align-items" value="center">
+                                center
+                            </label>
+                            <label>
+                                <input type="radio" name="align-items" value="flex-start">
+                                flex-start
+                            </label>
+                            <label>
+                                <input type="radio" name="align-items" value="flex-end">
+                                flex-end
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-md" bis_skin_checked="1">
+                        <div class="control-heading" bis_skin_checked="1">align-content</div>
+                        <div class="control-explanation" bis_skin_checked="1">only applies if there is more than one <span class="if-row">row</span><span class="if-column">column</span> of items</div>
+                        <div class="control-group" bis_skin_checked="1">
+                            <label>
+                                <input type="radio" name="align-content" value="stretch" checked="">
+                                stretch (default)
+                            </label>
+                            <label>
+                                <input type="radio" name="align-content" value="center">
+                                center
+                            </label>
+                            <label>
+                                <input type="radio" name="align-content" value="flex-start">
+                                flex-start
+                            </label>
+                            <label>
+                                <input type="radio" name="align-content" value="flex-end">
+                                flex-end
+                            </label>
+                            <label>
+                                <input type="radio" name="align-content" value="space-around">
+                                space-around
+                            </label>
+                            <label>
+                                <input type="radio" name="align-content" value="space-between">
+                                space-between
+                            </label>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+    </body>
+</html>

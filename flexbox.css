@@ -1,0 +1,14 @@
+#builder {
+    border: 1px solid black;
+    height: 500px;
+    width: 100%;
+}
+
+.children {
+    padding: 0px 46px;
+    font-size: 40px;
+    text-align: center;
+    line-height: 132px;
+    color: #FFFFFF;
+    background-color: #46DBFF;
+}
