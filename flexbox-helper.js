@@ -4,8 +4,9 @@ var childrenCnt = 1;
 var currentParent = null;
 
 initializeBuilder = () => {
-    var defaultChild = getDefaultChild();
-    currentParent.append(defaultChild);
+    onAddChild();
+    onAddChild();
+    onAddChild();
 }
 
 getDefaultChild = () => {
