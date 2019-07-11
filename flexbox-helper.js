@@ -4,14 +4,23 @@ var childrenCnt = 1;
 var currentParent = null;
 
 initializeBuilder = () => {
+    currentParent.click(onChildClick);
     onAddChild();
     onAddChild();
     onAddChild();
 }
 
+onChildClick = (event) => {
+    console.log('onchildclick',event.target.id);
+    currentParent.removeClass('selected-child');
+    currentParent = $(event.target);
+    currentParent.addClass('selected-child');
+}
+
 getDefaultChild = () => {
-    var defaultChild = $('<div id="child-'+childrenCnt+'">'+childrenCnt+'</div>');
+    var defaultChild = $('<div id="child-'+childrenCnt+'" data-ischild="true">'+childrenCnt+'</div>');
     defaultChild.attr('class', defaultchildrenClass);
+    defaultChild.click(onChildClick);
     childrenCnt ++;
     return defaultChild;
 }
@@ -28,6 +37,13 @@ initializeControls = () => {
 onAddChild = () => {
     console.log('onaddchild');
     var defaultChild = getDefaultChild();
+    var isNewlyAddedChild = currentParent.data('ischild');
+    if (isNewlyAddedChild && currentParent.children().length === 0) {
+        console.log('childrenSize:',currentParent.children().length);
+        // console.log('childrenText:',currentParent.text());
+        // console.log('childrenHTML:',currentParent.html());
+        currentParent.text('');
+    }
     currentParent.append(defaultChild);
 }
 

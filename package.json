@@ -1,0 +1,23 @@
+{
+  "name": "flexbox-sandbox",
+  "version": "1.0.0",
+  "description": "Flex box sandbox to play around",
+  "main": "flexbox-helper.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prathamudeshmukh/flexbox-sandbox.git"
+  },
+  "keywords": [
+    "flexbox",
+    "sandbox"
+  ],
+  "author": "Prathamesh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/prathamudeshmukh/flexbox-sandbox/issues"
+  },
+  "homepage": "https://github.com/prathamudeshmukh/flexbox-sandbox#readme"
+}

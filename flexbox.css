@@ -5,12 +5,14 @@
 }
 
 .default-children {
+    display:flex;
     padding: 0px 46px;
     font-size: 40px;
     text-align: center;
     line-height: 132px;
     color: #FFFFFF;
     background-color: #46DBFF;
+    border: 1px solid black;
 }
 
 .sandbox {
@@ -20,4 +22,8 @@
     align-content: stretch;
     justify-content: flex-start;
     align-items: stretch;
+}
+
+.selected-child {
+    opacity: 0.5;
 }
