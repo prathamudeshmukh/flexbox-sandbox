@@ -11,8 +11,8 @@
     text-align: center;
     line-height: 132px;
     color: #FFFFFF;
-    background-color: #46DBFF;
-    border: 1px solid black;
+    margin: 3px;
+    border-radius: 5px;
 }
 
 .sandbox {
@@ -25,5 +25,5 @@
 }
 
 .selected-child {
-    opacity: 0.5;
+    opacity: 0.25;
 }
