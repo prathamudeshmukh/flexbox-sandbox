@@ -13,6 +13,7 @@
     color: #FFFFFF;
     margin: 3px;
     border-radius: 5px;
+    cursor:pointer;
 }
 
 .sandbox {
@@ -25,5 +26,6 @@
 }
 
 .selected-child {
-    opacity: 0.25;
+    opacity: 0.50;
+    border: 1px solid black;
 }

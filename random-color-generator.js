@@ -323,9 +323,6 @@ materialColor = () => {
       "black": {
         "hex": "#000000"
       },
-      "white": {
-        "hex": "#ffffff"
-      }
     }
   var colorList = colors[pickRandomProperty(colors)];
   var newColorKey = pickRandomProperty(colorList);

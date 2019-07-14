@@ -118,7 +118,7 @@ $(document).ready(() => {
         currentParent = $("iframe#builder").contents().find('#container');
         initializeBuilder();
     });
-    var body = $('body');
-    body.click(resetSelection);
+    var resetSelectionBtn = $('#reset-selection');
+    resetSelectionBtn.click(resetSelection);
 });
 
