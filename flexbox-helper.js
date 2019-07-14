@@ -107,11 +107,18 @@ onAlignContentClick = (event) => {
     currentParent.css('align-content', alignContent)
 }
 
+resetSelection = () => {
+    currentParent.removeClass('selected-child');
+    currentParent = $("iframe#builder").contents().find('#container');
+}
+
 $(document).ready(() => {
     initializeControls();
     $('#builder').on("load", function() {
         currentParent = $("iframe#builder").contents().find('#container');
         initializeBuilder();
     });
+    var body = $('body');
+    body.click(resetSelection);
 });
 
