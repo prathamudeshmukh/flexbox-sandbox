@@ -11,8 +11,41 @@ initializeBuilder = () => {
 
 onChildClick = (event) => {
     currentParent.removeClass('selected-child');
+    var computedStyle = getComputedStyle(currentParent.attr('style'));
     currentParent = $(event.target);
     currentParent.addClass('selected-child');
+    initializeControlsSelections(computedStyle);
+}
+
+initializeControlsSelections = (style) => {
+    
+    var flexDirection = style['flex-direction'] ? style['flex-direction'] : 'row';
+    var flexWrap = style['flex-wrap'] ? style['flex-wrap'] : 'nowrap';
+    var justifyContent = style['justify-content'] ? style['justify-content'] : 'flex-start';
+    var alignItems = style['align-items'] ? style['align-items'] : 'stretch';
+    var alignContents = style['align-content'] ? style['align-content'] : 'stretch';
+
+    $("input[name='flex-direction'][value='"+flexDirection+"']").prop('checked',true);
+    $("input[name='flex-wrap'][value='"+flexWrap+"']").prop('checked',true);
+    $("input[name='justify-content'][value='"+justifyContent+"']").prop('checked',true);
+    $("input[name='align-items'][value='"+alignItems+"']").prop('checked',true);
+    $("input[name='align-content'][value='"+alignContents+"']").prop('checked',true);
+}
+
+getComputedStyle = (style) => {
+    if (!style) {
+        return {};
+    }
+    var styles = style.split(';')
+    if (!styles[styles.length - 1]){
+        styles = styles.slice(0,styles.length - 1);
+    }
+    var computedStyle = {};
+    for (var index in styles) {
+        var styleProp = styles[index].split(':');
+        computedStyle[styleProp[0].trim()] =  styleProp[1].trim()
+    }
+    return computedStyle;
 }
 
 getDefaultChild = () => {
