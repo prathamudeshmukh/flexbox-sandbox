@@ -9,11 +9,16 @@
         <link rel="stylesheet" href="./flexbox.css">
     </head>
     <body>
+            
             <div class="container" >
+                    <h3 class="mt-1">
+                            Flex box Sandbox
+                            <small class="text-muted">Play around with the layout builder and export the result in HTML/CSS</small>
+                    </h3>
                     <form>
                     <div class="row">
                             <div class="col-md">
-                                <iframe id="builder" src="./builder.html">
+                                <iframe id="builder" src="./builder.html" class="mb-3 mt-3">
                                 </iframe>
                             </div>
                     </div>
@@ -30,20 +35,26 @@
                     </form>
                     <div class="row" bis_skin_checked="1">
                     <div class="col-md" bis_skin_checked="1">
-                        <div class="control-heading" bis_skin_checked="1">flex-direction</div>
-                        <div class="form-check" bis_skin_checked="1">
+                        <h6>flex-direction</h6>
+                        <div class="row">
                             <label>
-                                <input type="radio" class="form-check-input" name="flex-direction" value="row" checked="">
+                                <input type="radio" name="flex-direction" value="row" checked="">
                                 row (default)
                             </label>
+                        </div>
+                        <div class="row">
                             <label>
                                 <input type="radio" name="flex-direction" value="row-reverse">
                                 row-reverse
                             </label>
+                        </div>
+                        <div class="row">
                             <label>
                                 <input type="radio" name="flex-direction" value="column">
                                 column
                             </label>
+                        </div>
+                        <div class="row">
                             <label>
                                 <input type="radio" name="flex-direction" value="column-reverse">
                                 column-reverse
