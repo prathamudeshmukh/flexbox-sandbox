@@ -49,3 +49,8 @@
 .logo {
     width: 45px;
 }
+
+.credits {
+    font-size: 10px;
+    color: #777;
+}
