@@ -49,9 +49,12 @@ getComputedStyle = (style) => {
 }
 
 getDefaultChild = () => {
-    var defaultChild = $('<div id="child-'+childrenCnt+'" data-ischild="true">'+childrenCnt+'</div>');
+    var emoji = $('<span class="emoji">'+getEmoji()+'</span>');
+    var defaultChild = $('<div id="child-'+childrenCnt+'" data-ischild="true"></div>');
     var deleteBtn = $('<button id="delete-btn"></button>');
     deleteBtn.click(onRemoveChild);
+    emoji.click((event) => event.stopPropagation());
+    defaultChild.append(emoji);
     defaultChild.append(deleteBtn);
     defaultChild.attr('class', defaultchildrenClass);
     defaultChild.css('backgroundColor', materialColor());
@@ -73,16 +76,19 @@ initializeControls = () => {
 onAddChild = () => {
     var defaultChild = getDefaultChild();
     var isNewlyAddedChild = currentParent.data('ischild');
-    if (isNewlyAddedChild && currentParent.children().length === 0) {
-        currentParent.text('');
+    if (isNewlyAddedChild && currentParent.find('> .emoji')) {
+        currentParent.find('> .emoji').remove();
     }
     currentParent.append(defaultChild);
 }
 
 onRemoveChild = () => {
-    var newParent = currentParent.parent();
-    currentParent.remove();
-    currentParent = newParent;
+    var removeChild = confirm("Sure to remove this child?");
+    if (removeChild) {
+        var newParent = currentParent.parent();
+        currentParent.remove();
+        currentParent = newParent;
+    }
 }
 
 onFlexDirectionClick = (event) => {
