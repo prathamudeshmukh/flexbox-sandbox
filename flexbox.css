@@ -9,10 +9,10 @@
     font-size: 40px;
     text-align: center;
     line-height: 132px;
-    color: #FFFFFF;
     margin: 3px;
     border-radius: 5px;
     cursor:pointer;
+    position: relative;
 }
 
 .sandbox {
@@ -25,6 +25,27 @@
 }
 
 .selected-child {
-    opacity: 0.50;
     border: 1px solid #dee2e6;
+}
+
+.selected-child > #delete-btn {
+    display: block;
+}
+
+#delete-btn {
+  display: none;
+  position: absolute;
+  right: 5px;
+  text-decoration: none;
+  text-shadow: 0 1px 0 #fff;
+  top: 5px;
+  color: #777;
+}
+
+#delete-btn:after {
+    content: '✖';
+  }
+
+.logo {
+    width: 45px;
 }
