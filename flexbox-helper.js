@@ -49,7 +49,10 @@ getComputedStyle = (style) => {
 }
 
 getDefaultChild = () => {
-    var defaultChild = $('<div id="child-'+childrenCnt+'" data-ischild="true"><button id="delete-btn" onClick="onRemoveChild()"></button>'+childrenCnt+'</div>');
+    var defaultChild = $('<div id="child-'+childrenCnt+'" data-ischild="true">'+childrenCnt+'</div>');
+    var deleteBtn = $('<button id="delete-btn"></button>');
+    deleteBtn.click(onRemoveChild);
+    defaultChild.append(deleteBtn);
     defaultChild.attr('class', defaultchildrenClass);
     defaultChild.css('backgroundColor', materialColor());
     defaultChild.click(onChildClick);
