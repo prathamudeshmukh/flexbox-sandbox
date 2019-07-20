@@ -18,7 +18,6 @@ onChildClick = (event) => {
 }
 
 initializeControlsSelections = (style) => {
-    
     var flexDirection = style['flex-direction'] ? style['flex-direction'] : 'row';
     var flexWrap = style['flex-wrap'] ? style['flex-wrap'] : 'nowrap';
     var justifyContent = style['justify-content'] ? style['justify-content'] : 'flex-start';
@@ -53,9 +52,14 @@ getDefaultChild = () => {
     var defaultChild = $('<div id="child-'+childrenCnt+'" data-ischild="true"></div>');
     var deleteBtn = $('<button id="delete-btn"></button>');
     deleteBtn.click(onRemoveChild);
+
+    var addChildBtn = $('<button class="add-child-btn"></button>');
+    addChildBtn.click(onAddChild);
+
     emoji.click((event) => event.stopPropagation());
     defaultChild.append(emoji);
     defaultChild.append(deleteBtn);
+    defaultChild.append(addChildBtn);
     defaultChild.attr('class', defaultchildrenClass);
     defaultChild.css('backgroundColor', materialColor());
     defaultChild.click(onChildClick);

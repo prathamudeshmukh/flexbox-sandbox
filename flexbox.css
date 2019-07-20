@@ -32,6 +32,10 @@
     display: block;
 }
 
+.selected-child > .add-child-btn {
+    display: block;
+}
+
 #delete-btn {
   display: none;
   position: absolute;
@@ -40,11 +44,27 @@
   text-shadow: 0 1px 0 #fff;
   top: 5px;
   color: #777;
+  z-index: 1;
 }
 
 #delete-btn:after {
-    content: '✖';
-  }
+  content: '✖';
+}
+
+.add-child-btn {
+  display: none;
+  position: absolute;
+  right: 30px;
+  text-decoration: none;
+  text-shadow: 0 1px 0 #fff;
+  top: 5px;
+  color: #777;
+  z-index: 1;
+}
+
+.add-child-btn:after {
+  content: '✚';
+}
 
 .logo {
     width: 50px;
