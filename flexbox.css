@@ -1,5 +1,4 @@
 #builder {
-    border: 1px solid black;
     height: 500px;
     width: 100%;
 }
@@ -27,5 +26,5 @@
 
 .selected-child {
     opacity: 0.50;
-    border: 1px solid black;
+    border: 1px solid #dee2e6;
 }
