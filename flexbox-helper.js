@@ -4,6 +4,11 @@ var currentParent = null;
 
 initializeBuilder = () => {
     currentParent.click(onChildClick);
+    currentParent.click();
+    var addChildBtn = $('<button class="add-child-btn"></button>');
+    addChildBtn.click(onAddChild);
+    currentParent.append(addChildBtn);
+
     onAddChild();
     onAddChild();
     onAddChild();
@@ -47,16 +52,19 @@ getComputedStyle = (style) => {
     return computedStyle;
 }
 
-getDefaultChild = () => {
+getEmojiElement = () => {
     var emoji = $('<span class="emoji">'+getEmoji()+'</span>');
+    emoji.click((event) => event.stopPropagation());
+    return emoji;
+}
+
+getDefaultChild = () => {
+    var emoji = getEmojiElement();
     var defaultChild = $('<div id="child-'+childrenCnt+'" data-ischild="true"></div>');
     var deleteBtn = $('<button id="delete-btn"></button>');
     deleteBtn.click(onRemoveChild);
-
     var addChildBtn = $('<button class="add-child-btn"></button>');
     addChildBtn.click(onAddChild);
-
-    emoji.click((event) => event.stopPropagation());
     defaultChild.append(emoji);
     defaultChild.append(deleteBtn);
     defaultChild.append(addChildBtn);
@@ -92,6 +100,10 @@ onRemoveChild = () => {
         var newParent = currentParent.parent();
         currentParent.remove();
         currentParent = newParent;
+        if (currentParent.find('.emoji').length === 0) {
+            var emoji = getEmojiElement();
+            currentParent.append(emoji);
+        }
     }
 }
 
